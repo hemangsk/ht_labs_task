@@ -1,0 +1,93 @@
+<div class="container">
+    <div class="row">
+        <div class="col m7">
+            <br><br><br><br>
+            <div class="title">
+                India and Alcohol Use Disorders
+            </div>
+
+            <br>
+            <div class="description">
+                How far we are from mastering the art of moderate-controlled drinking plan.
+            </div>
+
+            <br>
+            <div class="content">
+                <div class="col m12">
+                    <p>
+                     <span class="big">A</span> ccording to the <a href="">report of World Health Organisation</a>, one in twenty Indian males have an addiction or alcohol related disorder.
+                    </p>
+
+                     <p>
+                    The harmful psychological effects of uncontrolled alcohol consumption leads to serious threats to the society. Alcoholism, also known as Alcohol Use Disorders is quite evidently the 'most economical mechanism' to cause chaos in the Indian society.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+        <div class="col m5">
+            <div class="row">
+                <div class="col m6">
+                    <img style="height: 400px;margin-top: 5em;float: right;" src="./app/resources/asset3.svg">
+                </div>
+                <div class="col m6">
+                    <img style="height: 400px;margin-top: 8em;float: left;" src="./app/resources/asset1.svg">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col m6"> 
+            <ng-include src="'./app/views/all_states_graph_men.html'" scope="" onload=""></ng-include>
+        </div>
+       <div class="col m6">
+            <ng-include src="'./app/views/all_states_graph_women.html'" scope="" onload=""></ng-include>
+       </div>
+    </div>
+</div>
+<!-- 
+<div class="container content">
+    <div class="row">
+        <p>This report assumes that number of alcoholics in an area is directly proportional to number of people drinking alcohol.
+    </div>
+</div>
+-->
+
+<div class="container">
+    <div class="row">
+        <div class="col m4">
+            <p>
+            For a overview of the chaos created, we can look at the following data provided by Ministry of Road Transport and Highways which shows the 
+            number of people affected by uncontrolled alcohol consumption, and how important it is to have a controlled drinking plan.
+            </p>
+            <br><br>
+            <div class="input-field">
+                <select ng-model="selectedState" ng-options="x for x in population.state" ng-change="generate_crime_chart()"></select>
+                <label>I'm in</label>
+            </div>
+           
+        </div>
+        <div class="col m8">
+            <div id="chart_div" style="width: 100%; height: 500px;"></div>
+        </div>
+    </div>
+</div>
+
+<div >
+    <div class="">
+        <ng-include src="'./app/views/all_states_gender_based_violence.html'" scope="" onload=""></ng-include>
+    </div>
+</div>
+<div >
+    <div class="">
+        <ng-include src="'./app/views/all_states_literacy.html'" scope="" onload=""></ng-include>
+    </div>
+</div>
+<br><br><br>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('select').material_select();
+    });  
+</script>

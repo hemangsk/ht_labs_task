@@ -1,0 +1,100 @@
+<div id="barchart_material_lit" style="height: 660px; width: 100%;"></div>
+<script type="text/javascript">
+  dataset_men = {
+   "state":["Andaman and Nicobar Islands","Andhra Pradesh","Arunachal Pradesh","Assam","Bihar","Chhattisgarh","Dadra and Nagar Haveli","Daman and Diu","Delhi","Goa","Gujarat","Haryana","Himachal Pradesh","Jammu and Kashmir","Jharkhand","Karnataka","Kerala","Lakshadweep","Madhya Pradesh","Maharashtra","Manipur","Meghalaya","Mizoram","Nagaland","Odisha","Puducherry","Punjab","Rajasthan","Sikkim","Tamil Nadu","Telangana","Tripura","Uttar Pradesh","Uttarakhand","West Bengal"],
+   "urban":[58.8,29.6,55.2,29.7,26.2,52.1,27.8,39.9,24.8,49.4,10.6,24.9,36.8,9.2,33.2,30.1,32.8,7,28.3,22.8,52.9,40.7,52.3,41.5,32.2,38.8,29.7,19.4,48.9,46,46,54.7,21.6,33.7,35.7],
+   "rural":[46.8,37.7,60.5,36.8,29.5,52.9,41,22.9,null,37,11.4,24.2,40.2,11.1,42,28.6,40.8,0,30.3,18,52.3,45.7,44.9,37.3,41.3,45.2,36.9,14.5,52.9,47.4,61.2,58.9,22.4,36.2,25.1],
+   "total":[51.7,34.9,59,35.6,28.9,52.7,33.9,35.8,24.7,44.7,11.1,24.5,39.7,10.5,39.3,29.3,37,6.8,29.6,20.5,52.5,44.6,49.6,39,39.3,41,34,15.9,51.2,46.7,53.9,57.6,22.1,35.2,28.7]
+  }
+
+  dataset_women = {
+   "state":["Andaman and Nicobar Islands","Andhra Pradesh","Arunachal Pradesh","Assam","Bihar","Chhattisgarh","Dadra and Nagar Haveli","Daman and Diu","Delhi","Goa","Gujarat","Haryana","Himachal Pradesh","Jammu and Kashmir","Jharkhand","Karnataka","Kerala","Lakshadweep","Madhya Pradesh","Maharashtra","Manipur","Meghalaya","Mizoram","Nagaland","Odisha","Puducherry","Punjab","Rajasthan","Sikkim","Tamil Nadu","Telangana","Tripura","Uttar Pradesh","Uttarakhand","West Bengal"],
+   "urban":[1.2,0.1,22.3,2.9,0.2,1.4,0,1.9,0.7,4.2,0.1,0.2,0.5,0.2,0.6,1.6,2.4,0,0.6,0.2,6.2,3.1,6.7,4.7,1.3,0.5,0.1,0.1,22.7,0.5,2.7,0.4,0.1,0.5,0.7],
+   "rural":[3.5,0.6,27.8,7.7,0.3,6.2,0,0.3,0,4.4,0.4,0.1,0.3,0.1,5.5,0.5,0.9,0,2.1,0.2,6.1,1.8,2.2,2.4,2.6,0.7,0,0.1,23.1,0.3,14.3,6.7,0.2,0.2,0.9],
+   "total":[2.5,0.4,26.3,6.9,0.2,5,0,1.4,0.7,4.2,0.3,0.1,0.3,0.1,4.1,1,1.6,0,1.6,0.2,6.1,2.1,5,3.3,2.4,0.6,0.1,0.1,23,0.4,8.8,4.8,0.2,0.3,0.8]
+  }
+  
+  dataset_men_literacy = {
+   "state":["Andaman and Nicobar Islands","Andhra Pradesh","Arunachal Pradesh","Assam","Bihar","Chhattisgarh","Dadra and Nagar Haveli","Daman and Diu","Delhi","Goa","Gujarat","Haryana","Himachal Pradesh","Jammu and Kashmir","Jharkhand","Karnataka","Kerala","Lakshadweep","Madhya Pradesh","Maharashtra","Manipur","Meghalaya","Mizoram","Nagaland","Odisha","Puducherry","Punjab","Rajasthan","Sikkim","Tamil Nadu","Telangana","Tripura","Uttar Pradesh","Uttarakhand","West Bengal"],
+   "urban":[96.1,90.2,91.4,93.2,88.8,93,96.1,89.7,89.2,93.5,93,93,95,88.1,88.3,90,98.8,100,88.7,94.4,97.4,95.7,99.3,93.2,93,89.8,90.8,92.4,93.3,91.7,90.8,95.2,85.4,92.4,83.9],
+   "rural":[83.3,73.6,81.9,80.7,75.3,83.1,66.7,89.9,null,96.6,86.6,88.9,96.4,86.5,75.9,81.2,98.6,-93.3,78.5,91.2,95.2,80.8,96.3,80.6,81.9,96.1,85.2,82.6,90,86.2,76.5,87,81.1,89.6,79.7],
+   "total":[88.5,79.4,84.5,82.8,77.8,85.7,82.6,89.7,89.3,94.7,89.6,90.6,96.2,87,79.7,85.1,98.7,99.8,81.8,92.8,96,84,98.2,85.6,84.3,91.9,87.5,85.4,91.5,89.1,83.4,89.5,82.4,90.7,81.1]
+  }
+
+  dataset_women_literacy = {
+   "state":["Andaman and Nicobar Islands","Andhra Pradesh","Arunachal Pradesh","Assam","Bihar","Chhattisgarh","Dadra and Nagar Haveli","Daman and Diu","Delhi","Goa","Gujarat","Haryana","Himachal Pradesh","Jammu and Kashmir","Jharkhand","Karnataka","Kerala","Lakshadweep","Madhya Pradesh","Maharashtra","Manipur","Meghalaya","Mizoram","Nagaland","Odisha","Puducherry","Punjab","Rajasthan","Sikkim","Tamil Nadu","Telangana","Tripura","Uttar Pradesh","Uttarakhand","West Bengal"],
+   "urban":[89,74.9,80.9,87,70.6,81.6,82.1,85.2,81.8,88,83.1,80.3,92.6,77.5,79,81.8,98.4,95.7,77.5,85.9,89.9,93.4,98.6,89.9,80.7,85.1,86.1,75.8,89.5,85.6,79.3,88.4,74.6,81.7,79.4],
+   "rural":[80.2,57.4,60.1,69.2,46.3,61.3,46.5,78.2,85.1,90.8,64.8,72.1,87.8,65.4,51.5,63.8,97.3,96.1,51.4,74.8,81.7,79.6,85.4,75.1,64.5,84.8,78.4,49.8,85.2,72.9,52.4,77,56.2,73.6,66.9],
+   "total":[84.1,62.9,65.6,71.8,49.6,66.3,62.5,83.1,81.8,89,72.9,75.4,88.2,69,59,71.7,97.9,95.7,59.4,80.3,85,82.8,93.5,81,67.4,85,81.4,56.5,86.6,79.4,65.2,80.4,61,76.5,71]
+  }
+
+  dataset_population = {
+      "state":["Andaman and Nicobar Islands","Andhra Pradesh","Arunachal Pradesh","Assam","Bihar","Chhattisgarh","Dadra and Nagar Haveli","Daman and Diu","Delhi","Goa","Gujarat","Haryana","Himachal Pradesh","Jammu and Kashmir","Jharkhand","Karnataka","Kerala","Lakshadweep","Madhya Pradesh","Maharashtra","Manipur","Meghalaya","Mizoram","Nagaland","Odisha","Puducherry","Punjab","Rajasthan","Sikkim","Tamil Nadu","Telangana","Tripura","Uttar Pradesh","Uttarakhand","West Bengal"],
+      "total":[379944,49386799,1382611,31169272,103804637,25540196,342853,242911,16753235,1457723,60383628,25353081,6856509,12548926,32966238,61130704,33387677,64429,72597565,112372972,2721756,2964007,1091014,1980602,41947358,1244464,27704236,68621012,607688,72138958,35200000,3671032,199581477,10116752,91347736],
+      "male":[202330,24738068,720232,15954927,54185347,12827915,193178,150100,8976410,740711,31482282,13505130,3473892,6665561,16931688,31057742,16021290,33106,37612920,58361397,1369764,1492668,552339,1025707,21201678,610485,14634819,35620086,321661,36158871,17700000,1871867,104596415,5154178,46927389],
+      "female":[177614,24648731,662379,15214345,49619290,12712281,149675,92811,7776825,717012,28901346,11847951,3382617,5883365,16034550,30072962,17366387,31323,34984645,54011575,1351992,1471339,538675,954895,20745680,633979,13069417,33000926,286027,35980087,17500000,1799165,94985062,4962574,44420347]
+    };
+
+  var res_tmp = [];
+  var res_tmp2 = [];
+  dataset_population["state"].forEach(function (d, i) {
+     var men_alc = (dataset_men["total"][i] /100 ) * dataset_population["male"][i]
+     var women_alc = (dataset_women["total"][i] /100 ) * dataset_population["female"][i]
+     var res = ((men_alc) + (women_alc)) / dataset_population["total"][i];
+     var res_percent = res * 100;
+     res_tmp.push(res_percent);
+
+
+     var men_lt = (dataset_men_literacy["total"][i] /100 ) * dataset_population["male"][i]
+     var women_lt = (dataset_women_literacy["total"][i] /100 ) * dataset_population["female"][i]
+     var reslt = ((men_lt) + (women_lt)) / dataset_population["total"][i];
+     var res_percent_lt = reslt * 100;
+     res_tmp2.push(res_percent_lt);
+  
+
+  })
+
+  var final_obj = {
+    "state" : dataset_population["state"],
+    "alcohol_consumption" : res_tmp,
+    "lit" : res_tmp2
+  }
+
+  format_lt = [];
+  states = dataset["state"]
+  format_lt.push(["State", "% of population consuming alcohol", "% of population literate"])
+  dataset["state"].forEach(function (data, index) {
+    // body...
+    var tmp = [];
+    tmp.push(data);
+    tmp.push(parseInt(final_obj["alcohol_consumption"][index]))
+    tmp.push(parseInt(final_obj["lit"][index]))
+
+    format_lt.push(tmp);
+  })
+
+  console.log(format_lt)
+
+
+  google.charts.load('current', {'packages':['bar', 'corechart']});
+    google.charts.setOnLoadCallback(drawChartFour);
+
+    function drawChartFour() {
+      var data = google.visualization.arrayToDataTable(format_lt);
+       var options = {
+      title: 'Alcohol Consumption and Literacy',
+      subtitle: 'State Wise Data',
+      vAxis: {title: '% Population'},
+      hAxis: {slantedText:true,
+        slantedTextAngle:90},
+      seriesType: 'bars',
+      series: {5: {type: 'line'}}
+    };
+
+    var chart = new google.visualization.ComboChart(document.getElementById('barchart_material_lit'));
+    chart.draw(data, options);
+
+    
+    }
+
+</script>

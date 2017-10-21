@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>Story | India and Alcohol Use Disorders</title>
+
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.4/angular-resource.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.4/angular-route.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.10/ngStorage.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.4/angular-animate.js"></script>
+ <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+	<script src="./app/app.js"></script>
+	<script src="./app/controllers/index.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css">
+	<link rel="stylesheet" type="text/css" href="./style.css">
+	<link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700,800|Libre+Baskerville:400,400i,700|Muli:200,300,400,600,700,800|Playfair+Display:400,400i,700,700i,900|Quicksand:300,400,500,700" rel="stylesheet">
+
+
+</head>
+<body ng-app="ht">
+
+	<main class="declaration">
+		<div ng-view="" class="view"></div>
+	</main>
+	<footer class="page-footer declaration">
+		<div class="footer-copyright">
+			<div class="container center">
+
+				<p class="footer-disclaimer center">
+					STORY BY <span style="color: orange !important;">HEMANG</span></p>
+
+			</div>
+		</div>
+	</footer>
+</body>
+
+<script type="text/javascript">
+	$(window).on("load",function(){
+		$('.progress').css('display','none');
+		$('.declaration').css('display','block');
+	});
+</script>
+
+
+</html>

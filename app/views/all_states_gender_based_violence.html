@@ -1,0 +1,91 @@
+<div id="barchart_material_gbv" style="height: 660px; width: 100%;"></div>
+<script type="text/javascript">
+  dataset_men = {
+   "state":["Andaman and Nicobar Islands","Andhra Pradesh","Arunachal Pradesh","Assam","Bihar","Chhattisgarh","Dadra and Nagar Haveli","Daman and Diu","Delhi","Goa","Gujarat","Haryana","Himachal Pradesh","Jammu and Kashmir","Jharkhand","Karnataka","Kerala","Lakshadweep","Madhya Pradesh","Maharashtra","Manipur","Meghalaya","Mizoram","Nagaland","Odisha","Puducherry","Punjab","Rajasthan","Sikkim","Tamil Nadu","Telangana","Tripura","Uttar Pradesh","Uttarakhand","West Bengal"],
+   "urban":[58.8,29.6,55.2,29.7,26.2,52.1,27.8,39.9,24.8,49.4,10.6,24.9,36.8,9.2,33.2,30.1,32.8,7,28.3,22.8,52.9,40.7,52.3,41.5,32.2,38.8,29.7,19.4,48.9,46,46,54.7,21.6,33.7,35.7],
+   "rural":[46.8,37.7,60.5,36.8,29.5,52.9,41,22.9,null,37,11.4,24.2,40.2,11.1,42,28.6,40.8,0,30.3,18,52.3,45.7,44.9,37.3,41.3,45.2,36.9,14.5,52.9,47.4,61.2,58.9,22.4,36.2,25.1],
+   "total":[51.7,34.9,59,35.6,28.9,52.7,33.9,35.8,24.7,44.7,11.1,24.5,39.7,10.5,39.3,29.3,37,6.8,29.6,20.5,52.5,44.6,49.6,39,39.3,41,34,15.9,51.2,46.7,53.9,57.6,22.1,35.2,28.7]
+  }
+
+  dataset_gender_based_violence = {
+   "state":["Andaman and Nicobar Islands","Andhra Pradesh","Arunachal Pradesh","Assam","Bihar","Chhattisgarh","Dadra and Nagar Haveli","Daman and Diu","Delhi","Goa","Gujarat","Haryana","Himachal Pradesh","Jammu and Kashmir","Jharkhand","Karnataka","Kerala","Lakshadweep","Madhya Pradesh","Maharashtra","Manipur","Meghalaya","Mizoram","Nagaland","Odisha","Puducherry","Punjab","Rajasthan","Sikkim","Tamil Nadu","Telangana","Tripura","Uttar Pradesh","Uttarakhand","West Bengal"],
+   "urban":[19.4,42.4,28.3,15.9,40.2,35.4,-12.5,34.6,27.1,15.3,14.1,25.1,10.6,6.7,19.7,20.6,13.7,5.5,27.3,16.4,48.1,22,16.7,11.3,24.8,33.3,19.7,22,0.4,37.2,36.9,16.7,29.6,12.1,23.7],
+   "rural":[17.4,43.6,31.4,26.2,43.7,37.1,50.8,7.4,null,8.7,24.8,37.1,5.2,10.6,38.8,20.4,14.8,null,35.4,26.2,56.1,30.4,17.6,13.6,37.9,37.5,20.9,26.2,4.2,44.2,47.6,32.4,39.3,13.1,36.9],
+   "total":[18.3,43.2,30.6,24.5,43.2,36.7,33.2,26.6,26.8,12.9,20.1,32,5.9,9.4,34,20.5,14.3,6,33,21.4,53.1,28.7,17,12.7,35.2,34.5,20.5,25.1,2.6,40.6,43,27.9,36.7,12.7,32.8]
+  }
+
+  dataset_women = {
+   "state":["Andaman and Nicobar Islands","Andhra Pradesh","Arunachal Pradesh","Assam","Bihar","Chhattisgarh","Dadra and Nagar Haveli","Daman and Diu","Delhi","Goa","Gujarat","Haryana","Himachal Pradesh","Jammu and Kashmir","Jharkhand","Karnataka","Kerala","Lakshadweep","Madhya Pradesh","Maharashtra","Manipur","Meghalaya","Mizoram","Nagaland","Odisha","Puducherry","Punjab","Rajasthan","Sikkim","Tamil Nadu","Telangana","Tripura","Uttar Pradesh","Uttarakhand","West Bengal"],
+   "urban":[1.2,0.1,22.3,2.9,0.2,1.4,0,1.9,0.7,4.2,0.1,0.2,0.5,0.2,0.6,1.6,2.4,0,0.6,0.2,6.2,3.1,6.7,4.7,1.3,0.5,0.1,0.1,22.7,0.5,2.7,0.4,0.1,0.5,0.7],
+   "rural":[3.5,0.6,27.8,7.7,0.3,6.2,0,0.3,0,4.4,0.4,0.1,0.3,0.1,5.5,0.5,0.9,0,2.1,0.2,6.1,1.8,2.2,2.4,2.6,0.7,0,0.1,23.1,0.3,14.3,6.7,0.2,0.2,0.9],
+   "total":[2.5,0.4,26.3,6.9,0.2,5,0,1.4,0.7,4.2,0.3,0.1,0.3,0.1,4.1,1,1.6,0,1.6,0.2,6.1,2.1,5,3.3,2.4,0.6,0.1,0.1,23,0.4,8.8,4.8,0.2,0.3,0.8]
+  }
+
+  dataset_population = {
+      "state":["Andaman and Nicobar Islands","Andhra Pradesh","Arunachal Pradesh","Assam","Bihar","Chhattisgarh","Dadra and Nagar Haveli","Daman and Diu","Delhi","Goa","Gujarat","Haryana","Himachal Pradesh","Jammu and Kashmir","Jharkhand","Karnataka","Kerala","Lakshadweep","Madhya Pradesh","Maharashtra","Manipur","Meghalaya","Mizoram","Nagaland","Odisha","Puducherry","Punjab","Rajasthan","Sikkim","Tamil Nadu","Telangana","Tripura","Uttar Pradesh","Uttarakhand","West Bengal"],
+      "total":[379944,49386799,1382611,31169272,103804637,25540196,342853,242911,16753235,1457723,60383628,25353081,6856509,12548926,32966238,61130704,33387677,64429,72597565,112372972,2721756,2964007,1091014,1980602,41947358,1244464,27704236,68621012,607688,72138958,35200000,3671032,199581477,10116752,91347736],
+      "male":[202330,24738068,720232,15954927,54185347,12827915,193178,150100,8976410,740711,31482282,13505130,3473892,6665561,16931688,31057742,16021290,33106,37612920,58361397,1369764,1492668,552339,1025707,21201678,610485,14634819,35620086,321661,36158871,17700000,1871867,104596415,5154178,46927389],
+      "female":[177614,24648731,662379,15214345,49619290,12712281,149675,92811,7776825,717012,28901346,11847951,3382617,5883365,16034550,30072962,17366387,31323,34984645,54011575,1351992,1471339,538675,954895,20745680,633979,13069417,33000926,286027,35980087,17500000,1799165,94985062,4962574,44420347]
+    };
+
+  var res_tmp = [];
+  var res_tmp2 = [];
+  dataset_population["state"].forEach(function (d, i) {
+     var men_alc = (dataset_men["total"][i] /100 ) * dataset_population["male"][i]
+     var women_alc = (dataset_women["total"][i] /100 ) * dataset_population["female"][i]
+     var res = ((men_alc) + (women_alc)) / dataset_population["total"][i];
+     var res_percent = res * 100;
+     res_tmp.push(res_percent);
+
+     var gbv = (dataset_gender_based_violence["total"][i] / 100) * dataset_population["female"][i] 
+     var res_gbv = (gbv / dataset_population["total"][i]) * 100;
+     res_tmp2.push(res_gbv); 
+
+  })
+
+ 
+
+  var final_obj = {
+    "state" : dataset_population["state"],
+    "alcohol_consumption" : res_tmp,
+    "gbv" : res_tmp2
+  }
+
+  format_gbv = [];
+  states = dataset["state"]
+  format_gbv.push(["State", "% of population consuming alcohol", "% of population experienced gender based violence"])
+  dataset["state"].forEach(function (data, index) {
+    // body...
+    var tmp = [];
+    tmp.push(data);
+    tmp.push(parseInt(final_obj["alcohol_consumption"][index]))
+    tmp.push(parseInt(final_obj["gbv"][index]))
+
+    format_gbv.push(tmp);
+  })
+
+  console.log(format_gbv)
+
+
+  google.charts.load('current', {'packages':['bar', 'corechart']});
+    google.charts.setOnLoadCallback(drawChartThree);
+
+    function drawChartThree() {
+      var data = google.visualization.arrayToDataTable(format_gbv);
+       var options = {
+      title: 'Alcohol Consumption and Gender Based Violence',
+      subtitle: 'State Wise Data',
+      vAxis: {title: '% Population'},
+      hAxis: {slantedText:true,
+        slantedTextAngle:90},
+      seriesType: 'bars',
+      series: {5: {type: 'line'}}
+    };
+
+    var chart = new google.visualization.ComboChart(document.getElementById('barchart_material_gbv'));
+    chart.draw(data, options);
+
+    
+    }
+
+</script>
