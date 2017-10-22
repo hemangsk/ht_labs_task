@@ -1,0 +1,98 @@
+<div id="barchart_material_we" style="height: 1000px;"></div>
+
+<script type="text/javascript">
+	dataset_we_b = {
+   "state":["Andaman and Nicobar Islands","Andhra Pradesh","Arunachal Pradesh","Assam","Bihar","Chhattisgarh","Dadra and Nagar Haveli","Daman and Diu","Delhi","Goa","Gujarat","Haryana","Himachal Pradesh","Jammu and Kashmir","Jharkhand","Karnataka","Kerala","Lakshadweep","Madhya Pradesh","Maharashtra","Manipur","Meghalaya","Mizoram","Nagaland","Odisha","Puducherry","Punjab","Rajasthan","Sikkim","Tamil Nadu","Telangana","Tripura","Uttar Pradesh","Uttarakhand","West Bengal"],
+   "urban":[90.6,58.9,72.4,61.5,36.9,62.1,47.5,63.6,64.5,84.4,56.5,51.4,77.5,70.5,55.8,67.8,70.3,72.4,50.1,52,42.9,67.9,68.4,54.8,65.9,65.2,65,66.8,68.9,75.7,60.7,69.4,60.1,65.5,54.8],
+   "rural":[74.9,69.9,51.1,42.1,24.6,47.6,27.4,58.4,null,79.9,42.2,41.5,67.5,55.4,40.9,52.1,70.8,-82.2,31.4,38.7,29.7,49.9,38.8,27.3,53.7,74.8,54.9,55.2,59.7,78.3,58.7,54.8,52.6,54.6,38.3],
+   "total":[81.8,66.3,56.6,45.4,26.4,51.3,36.9,61.9,64.4,82.8,48.6,45.6,68.8,60.3,45.1,59.4,70.6,72.6,37.3,45.3,34.8,54.4,57.4,38.9,56.2,68.2,58.8,58.2,63.5,77,59.7,59.2,54.6,58.5,43.5]
+}
+
+dataset_we_h ={
+   "state":["Andaman and Nicobar Islands","Andhra Pradesh","Arunachal Pradesh","Assam","Bihar","Chhattisgarh","Dadra and Nagar Haveli","Daman and Diu","Delhi","Goa","Gujarat","Haryana","Himachal Pradesh","Jammu and Kashmir","Jharkhand","Karnataka","Kerala","Lakshadweep","Madhya Pradesh","Maharashtra","Manipur","Meghalaya","Mizoram","Nagaland","Odisha","Puducherry","Punjab","Rajasthan","Sikkim","Tamil Nadu","Telangana","Tripura","Uttar Pradesh","Uttarakhand","West Bengal"],
+   "urban":[26.6,42.8,61.8,45.9,46.8,23.8,41.7,30.9,34.7,33.4,29.7,34.8,9.2,32.9,50,45.1,31.1,41.6,41,35.2,72.7,29.4,14.9,25.9,56.8,41.9,33.9,22.8,19.4,34.6,42.2,56,30.2,27.2,25.8],
+   "rural":[32.1,45.6,59,53.7,60.9,27.3,3.9,19.2,null,34.8,25.2,36.6,11.6,33.5,49.5,57.5,38.4,-46.6,44.7,33.3,68.1,66.6,27.8,41.1,65.2,36.6,30.9,24.5,28.5,37.9,58.2,57.8,35.7,30.4,22.8],
+   "total":[29.7,44.7,59.7,52.3,58.8,26.4,21.8,27,35,33.9,27.2,35.8,11.3,33.3,49.7,51.8,34.9,41.7,43.5,34.3,69.9,57.3,19.7,34.7,63.5,40.3,32.1,24.1,24.8,36.2,50.5,57.3,34.2,29.2,23.8]
+}
+
+dataset_we_p = {
+   "state":["Andaman and Nicobar Islands","Andhra Pradesh","Arunachal Pradesh","Assam","Bihar","Chhattisgarh","Dadra and Nagar Haveli","Daman and Diu","Delhi","Goa","Gujarat","Haryana","Himachal Pradesh","Jammu and Kashmir","Jharkhand","Karnataka","Kerala","Lakshadweep","Madhya Pradesh","Maharashtra","Manipur","Meghalaya","Mizoram","Nagaland","Odisha","Puducherry","Punjab","Rajasthan","Sikkim","Tamil Nadu","Telangana","Tripura","Uttar Pradesh","Uttarakhand","West Bengal"],
+   "urban":[78.4,54.1,82,71.4,50,54.7,57.8,66.6,66.6,81.5,63.5,63.9,85.4,68.6,53.4,62.3,81.1,68.6,49.5,60.4,71.6,80.2,88.5,82.7,64.7,68,71.9,61.2,87.1,70.7,63.1,67.6,48.6,63.5,58.8],
+   "rural":[57.9,27.8,52.1,40.7,39.3,22.9,18.1,48.6,null,79.8,35.4,41.1,72.3,47.3,27.9,34,81.2,-44.3,19.1,30.9,57.8,59.1,58.2,61.6,32.5,65.7,47.9,34.4,74.8,53.4,33.8,33.7,32.8,50.7,33.9],
+   "total":[66.9,36.2,59.8,46,40.9,31,36.9,60.6,66.6,80.9,47.9,50.5,73.9,54.2,35.2,47.1,81.2,68,28.7,45.6,63.1,64.3,77.3,70.5,39.2,67.3,57.2,41.4,79.8,62,47.8,43.9,37.1,55.4,41.9]
+}
+format_we = [];
+  states = dataset["state"]
+  format_we.push(["State", "Bank / Savings Account", "Personal Phone", "House / Land Owner"])
+  dataset["state"].forEach(function (data, index) {
+    // body...
+    var tmp = [];
+    tmp.push(data);
+    tmp.push(dataset_we_b["total"][index])
+    tmp.push(dataset_we_p["total"][index])
+    tmp.push(dataset_we_h["total"][index])
+
+    format_we.push(tmp);
+  })
+
+  google.charts.load('current', {'packages':['bar', 'corechart']});
+    google.charts.setOnLoadCallback(drawChartFive);
+
+    function drawChartFive() {
+      var data = google.visualization.arrayToDataTable(format_we);
+       var options = {
+      title: 'Women\'s Empowerment ( State Wise Data ) ',
+      subtitle: 'State Wise Data',
+      vAxis: {title: '% Population'},
+      hAxis: {slantedText:true,
+        slantedTextAngle:90},
+      seriesType: 'bars',
+      series: {5: {type: 'line'}}
+    };
+
+    var chart = new google.visualization.ComboChart(document.getElementById('barchart_material_we'));
+    chart.draw(data, options);
+
+    
+    }
+
+ sum = 0;
+   total = 0;
+    dataset_population["state"].forEach(function (d,i) {
+     sum+= parseInt((dataset_we_h["total"][i] /100 ) * dataset_population["female"][i]);
+      total += dataset_population["female"][i];
+   })
+
+    console.log(sum);
+   console.log(total);
+   var final_percent = (sum / total) * 100;
+
+   console.log("House" + final_percent);
+
+
+   sum = 0;
+   total = 0;
+    dataset_population["state"].forEach(function (d,i) {
+     sum+= parseInt((dataset_we_b["total"][i] /100 ) * dataset_population["female"][i]);
+      total += dataset_population["female"][i];
+   })
+
+    console.log(sum);
+   console.log(total);
+   var final_percent = (sum / total) * 100;
+
+   console.log("bank" + final_percent);
+
+    sum = 0;
+   total = 0;
+    dataset_population["state"].forEach(function (d,i) {
+     sum+= parseInt((dataset_we_p["total"][i] /100 ) * dataset_population["female"][i]);
+      total += dataset_population["female"][i];
+   })
+
+    console.log(sum);
+   console.log(total);
+   var final_percent = (sum / total) * 100;
+
+   console.log("phone" + final_percent);
+</script>

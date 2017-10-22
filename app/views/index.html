@@ -37,6 +37,7 @@
         </div>
     </div>
 </div>
+<br>
 <div class="container">
     <div class="row">
         <div class="col m6"> 
@@ -47,19 +48,20 @@
        </div>
     </div>
 </div>
-<!-- 
+
 <div class="container content">
-    <div class="row">
-        <p>This report assumes that number of alcoholics in an area is directly proportional to number of people drinking alcohol.
+    <div class="row center">
+        <p style="text-align: center">The story assumes that density of alcoholism in an area is directly proportional to number of people drinking alcohol. 
+
     </div>
 </div>
--->
+
 
 <div class="container">
     <div class="row">
         <div class="col m4">
             <p>
-            For a overview of the chaos created, we can look at the following data provided by Ministry of Road Transport and Highways which shows the 
+            For a overview of the chaos and disorder created, we can look at the following data provided by Ministry of Road Transport and Highways which shows the 
             number of people affected by uncontrolled alcohol consumption, and how important it is to have a controlled drinking plan.
             </p>
             <br><br>
@@ -75,17 +77,76 @@
     </div>
 </div>
 
-<div >
+<div>
     <div class="">
         <ng-include src="'./app/views/all_states_gender_based_violence.html'" scope="" onload=""></ng-include>
     </div>
 </div>
-<div >
+
+<br>
+<div class="container content">
+    <div class="row">
+        <p>In the graph of Alcohol Consumption v/s Gender based violence, an observation is evident that Sikkim has the second highest percentage of population consuming alcohol which is nearly double the National Average of 15.6 %. Also, on the other hand, it can be observed that it has the lowest percentage of victims of spousal violence (1%).
+
+        <p>Following a similar pattern is Arunachal Pradesh in alcohol consumption, which is at 43%, thrice the National Average. Also, the percentage of victims of spousal violence in Arunachal Pradesh is less than the National Average of 15.14%.
+
+        <p>Infact, a few more inference about Sikkim and Arunachal Pradesh are evident from the visualization below:
+        <ul class="ml">
+            <li><p>The percentage of women having their own Bank Account and/or Saving Account in Arunachal Pradesh and Sikkim, is greater than the national average of 51.83 %. </li>
+            <li><p>Sikkim has the third largest percentage population of women having a mobile phone that they themselves use.
+            <li><p>At 59.7% Arunachal Pradesh has the third largest percentage population of women having a bank or savings account that they themselves use.
+            <li><p>Only exception is in Sikkim where percentage women who own a house or land in their name is 17% less than the National Average of 38.9%.    
+        </ul>
+    </div>
+</div>
+
+<div style="margin-top: -3em;">
+    <div class="">
+        <ng-include src="'./app/views/all_states_women_empowerment.html'" scope="" onload=""></ng-include>
+    </div>
+</div>
+
+<br><br>
+<div class="container content">
+    <div class="row">
+        <p>Sikkim and Arunachal Pradesh have been comparatively better in fight against the social evil of gender inequality than the other parts of India as the graph shows. Essentially one can say they have been able to provide both the genders equal opportunties and ensured that they deserve to enjoy same rights, relative to other states. 
+        A <a href="http://indiatoday.intoday.in/story/delhi-at-the-bottom-of-women-in-workplace-index-sikkim-at-top/1/769358.html">story on report by Centre for Strategic and International Studies</a> concluded Sikkim has the best working conditions for women, with absolute zero restrictions on women working in night shifts at retail establishments, factories and IT Sector.
+    </div>
+</div>
+<div>
     <div class="">
         <ng-include src="'./app/views/all_states_literacy.html'" scope="" onload=""></ng-include>
     </div>
 </div>
-<br><br><br>
+<br>
+<div class="container content">
+    <div class="row">
+        <p>At 86.6 % percent of Women and 91.5 % percent of Men who are literate, Sikkim is well above the National Average of 76.69 % (for Women) and 84.99 % (for Men). 
+        From abandoning social stigmas to breaking the taboos, Sikkim has set up a nice example, being backed by a good literacy rate. As an example, the trend of disparity in the men and women who consume alcohol throughout India is very huge except in Arunanchal Pradesh and Sikkim, which of course implies nothing more but just that women have the <em>choice</em> to do so without being disapproved, censored, and a thou-shalt-not judgement, which the major part of India <em>needs</em> to understand straight away.
+    </div>
+    <div class="row">
+        <div class="app-title">How safe are the states?</div>
+        <div class="row">
+            <div class="col m3">
+                <div class="input-field">
+                    <select ng-model="selectedStateApp" ng-options="x for x in population.state" ng-change="generate_app_chart()"></select>
+                </div>
+            </div>    
+            <div class="col m1">
+                <p>is</p>
+            </div>
+            <div class="col m8">
+                <ul>
+                 
+                 <li><p>{{ formatpos(stateposacc) }} in Gender Based Violence among Indian states, with {{ stategapacc }} % of women who have ever experienced spousal violence.</p></li>
+                 <li><p>{{ formatpos(stateposcrime) }} in Accidents caused due under influence of alcohol among Indian states, with {{ stategapcrime }} % of total Fatal Accidents caused due to intake of Alcohol.</p></li>
+            </div>
+        </div>
+        <div class="content center">
+            
+        </div>        
+               
+    </div>
 <script type="text/javascript">
     $(document).ready(function() {
         $('select').material_select();

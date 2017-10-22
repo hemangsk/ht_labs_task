@@ -152,10 +152,10 @@ main {
 }
 
 p {
-  font-family: "Playfair Display";
+  font-family: "Muli";
   line-height: 2;
   text-align: justify;
-  font-size: 1em;
+  font-size: 1.1em;
 }
 
 p .big {
@@ -177,4 +177,13 @@ a:hover {
 
 .content {
   margin-top: 1em;
+}
+
+ul.ml:not(.browser-default) {
+    padding-left: 2em;
+    list-style-type: disc;
+}
+
+ul.ml:not(.browser-default)>li {
+    list-style-type: disc;
 }

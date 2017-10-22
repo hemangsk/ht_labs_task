@@ -16,6 +16,8 @@ angular.module('ht')
 
 		$scope.selectedState = $scope.population.state[0];
 
+		$scope.selectedStateApp = $scope.population.state[0];
+
 		var crime_due_to_alcoholism_injured = {
 		   "state":["Andaman and Nicobar Islands","Andhra Pradesh","Arunachal Pradesh","Assam","Bihar","Chhattisgarh","Dadra and Nagar Haveli","Daman and Diu","Delhi","Goa","Gujarat","Haryana","Himachal Pradesh","Jammu and Kashmir","Jharkhand","Karnataka","Kerala","Lakshadweep","Madhya Pradesh","Maharashtra","Manipur","Meghalaya","Mizoram","Nagaland","Odisha","Puducherry","Punjab","Rajasthan","Sikkim","Tamil Nadu","Telangana","Tripura","Uttar Pradesh","Uttarakhand","West Bengal"],
 		   "2006":["60","4660","25","650","1123","335","0","4","0","48","1883","267","376","197","290","4213","807","0","4298","3051","0","34","15","46","925","1","199","3307","117","474","NA","0","2118","67","314"],
@@ -44,6 +46,40 @@ angular.module('ht')
 		   "2015":[0,117,10,249,867,78,4,6,6,0,121,478,9,99,906,62,11,0,705,341,0,21,9,0,427,0,91,344,7,142,19,5,1404,3,214]
 		}
 
+		var gender_based_violence = {
+		   "state":["Andaman and Nicobar Islands","Andhra Pradesh","Arunachal Pradesh","Assam","Bihar","Chhattisgarh","Dadra and Nagar Haveli","Daman and Diu","Delhi","Goa","Gujarat","Haryana","Himachal Pradesh","Jammu and Kashmir","Jharkhand","Karnataka","Kerala","Lakshadweep","Madhya Pradesh","Maharashtra","Manipur","Meghalaya","Mizoram","Nagaland","Odisha","Puducherry","Punjab","Rajasthan","Sikkim","Tamil Nadu","Telangana","Tripura","Uttar Pradesh","Uttarakhand","West Bengal"],
+		   "urban":[19.4,42.4,28.3,15.9,40.2,35.4,-12.5,34.6,27.1,15.3,14.1,25.1,10.6,6.7,19.7,20.6,13.7,5.5,27.3,16.4,48.1,22,16.7,11.3,24.8,33.3,19.7,22,0.4,37.2,36.9,16.7,29.6,12.1,23.7],
+		   "rural":[17.4,43.6,31.4,26.2,43.7,37.1,50.8,7.4,null,8.7,24.8,37.1,5.2,10.6,38.8,20.4,14.8,null,35.4,26.2,56.1,30.4,17.6,13.6,37.9,37.5,20.9,26.2,4.2,44.2,47.6,32.4,39.3,13.1,36.9],
+		   "total":[18.3,43.2,30.6,24.5,43.2,36.7,33.2,26.6,26.8,12.9,20.1,32,5.9,9.4,34,20.5,14.3,6,33,21.4,53.1,28.7,17,12.7,35.2,34.5,20.5,25.1,2.6,40.6,43,27.9,36.7,12.7,32.8]
+		}
+
+		$scope.generate_app_chart = function () {
+			var total = crime_due_to_alcoholism_killed["2015"];
+			var index = (crime_due_to_alcoholism_killed.state).indexOf($scope.selectedStateApp);
+			var sum = 0;
+
+			angular.forEach(total, function(value, key){
+				sum+=value;
+			});
+
+
+			var res = crime_due_to_alcoholism_killed["2015"][index];
+			$scope.stategapcrime = Number((( res / sum ) * 100).toFixed(1)); 
+
+			total = total.sort(function(a, b){return b-a});
+			$scope.stateposcrime = total.indexOf(res) + 1;
+
+			var gbv = gender_based_violence["total"];
+			var gbv_res = gender_based_violence["total"][index];
+			$scope.stategapacc = gender_based_violence["total"][index];
+			gbv = gbv.sort(function(a, b){return b-a});
+			console.log(gbv);
+			console.log(gbv_res);
+			$scope.stateposacc = gbv.indexOf(gbv_res) + 1;
+		}
+
+		$scope.generate_app_chart();
+
 		$scope.generate_crime_chart = function () {
 			var tmp = [];
 			tmp.push(['Year', 'Killed', 'Injured'])
@@ -52,7 +88,6 @@ angular.module('ht')
 			keys.pop(0)
 
 			angular.forEach(keys, function(data, k){
-				console.log(data)
 				var one = parseInt(crime_due_to_alcoholism_killed[data][index]);
 				var second = parseInt(crime_due_to_alcoholism_injured[data][index]);
 
@@ -60,7 +95,6 @@ angular.module('ht')
 			});
 			
 			
-			console.log(tmp);
 
 			google.charts.load('current', {'packages':['corechart']});
 	     	google.charts.setOnLoadCallback(drawCrimeChart);
@@ -80,4 +114,16 @@ angular.module('ht')
 	      	}
 		}
 		$scope.generate_crime_chart();
+
+		$scope.formatpos = function (arg) {
+			if (arg == '1') {
+				return '1st'
+			} else if(arg == '2') {
+				return '2nd'
+			} else if (arg == '3') {
+				return '3rd'
+			} else {
+				return arg + 'th'
+			}
+		}
 	}]);

@@ -88,4 +88,41 @@
     
     }
 
+   var sum = 0;
+   var total = 0;
+   dataset_population["state"].forEach(function (d, i) {
+      sum+= parseInt((dataset_women["total"][i] /100 ) * dataset_population["female"][i]);
+      total += dataset_population["female"][i];
+   })
+
+   var final_percent = (sum / total) * 100;
+
+   //console.log(final_percent);
+
+   sum = 0;
+   total = 0;
+    dataset_population["state"].forEach(function (d,i) {
+     sum+= parseInt((final_obj["alcohol_consumption"][i] /100 ) * dataset_population["total"][i]);
+      total += dataset_population["total"][i];
+   })
+
+    
+   var final_percent = (sum / total) * 100;
+
+   //console.log(final_percent);
+
+
+   sum = 0;
+   total = 0;
+    dataset_population["state"].forEach(function (d,i) {
+     sum+= parseInt((final_obj["gbv"][i] /100 ) * dataset_population["total"][i]);
+      total += dataset_population["total"][i];
+   })
+
+    
+   var final_percent = (sum / total) * 100;
+
+   //console.log(final_percent);
+
+
 </script>

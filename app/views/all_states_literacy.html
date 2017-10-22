@@ -73,9 +73,6 @@
     format_lt.push(tmp);
   })
 
-  console.log(format_lt)
-
-
   google.charts.load('current', {'packages':['bar', 'corechart']});
     google.charts.setOnLoadCallback(drawChartFour);
 
@@ -97,4 +94,39 @@
     
     }
 
+
+     sum = 0;
+   total = 0;
+    dataset_population["state"].forEach(function (d,i) {
+     sum+= parseInt((final_obj["lit"][i] /100 ) * dataset_population["total"][i]);
+      total += dataset_population["total"][i];
+   })
+
+    
+   var final_percent = (sum / total) * 100;
+   console.log("lit" + final_percent)
+
+     sum = 0;
+   total = 0;
+    dataset_population["state"].forEach(function (d,i) {
+     sum+= parseInt((dataset_women_literacy["total"][i] /100 ) * dataset_population["female"][i]);
+      total += dataset_population["female"][i];
+   })
+
+    
+   var final_percent = (sum / total) * 100;
+   console.log("women" + final_percent)
+
+
+
+     sum = 0;
+   total = 0;
+    dataset_population["state"].forEach(function (d,i) {
+     sum+= parseInt((dataset_men_literacy["total"][i] /100 ) * dataset_population["male"][i]);
+      total += dataset_population["male"][i];
+   })
+
+    
+   var final_percent = (sum / total) * 100;
+   console.log("men" + final_percent)
 </script>
