@@ -43,8 +43,6 @@
 
   })
 
- 
-
   var final_obj = {
     "state" : dataset_population["state"],
     "alcohol_consumption" : res_tmp,
@@ -64,11 +62,8 @@
     format_gbv.push(tmp);
   })
 
-  console.log(format_gbv)
-
-
   google.charts.load('current', {'packages':['bar', 'corechart']});
-    google.charts.setOnLoadCallback(drawChartThree);
+  google.charts.setOnLoadCallback(drawChartThree);
 
     function drawChartThree() {
       var data = google.visualization.arrayToDataTable(format_gbv);
@@ -84,10 +79,10 @@
 
     var chart = new google.visualization.ComboChart(document.getElementById('barchart_material_gbv'));
     chart.draw(data, options);
+   }
 
-    
-    }
-
+   /* Calculating Averages */
+   
    var sum = 0;
    var total = 0;
    dataset_population["state"].forEach(function (d, i) {
@@ -97,19 +92,14 @@
 
    var final_percent = (sum / total) * 100;
 
-   //console.log(final_percent);
-
    sum = 0;
    total = 0;
     dataset_population["state"].forEach(function (d,i) {
      sum+= parseInt((final_obj["alcohol_consumption"][i] /100 ) * dataset_population["total"][i]);
       total += dataset_population["total"][i];
    })
-
     
    var final_percent = (sum / total) * 100;
-
-   //console.log(final_percent);
 
 
    sum = 0;
@@ -118,11 +108,9 @@
      sum+= parseInt((final_obj["gbv"][i] /100 ) * dataset_population["total"][i]);
       total += dataset_population["total"][i];
    })
-
     
    var final_percent = (sum / total) * 100;
 
-   //console.log(final_percent);
 
 
 </script>

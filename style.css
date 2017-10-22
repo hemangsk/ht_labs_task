@@ -187,3 +187,20 @@ ul.ml:not(.browser-default) {
 ul.ml:not(.browser-default)>li {
     list-style-type: disc;
 }
+
+.stat {
+    font-size: 2em;
+    color: crimson;
+    font-weight: 700;
+    display: -webkit-inline-box;
+    line-height: 1;
+}
+.app-title {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-family: "Quicksand";
+    font-weight: 700;
+    font-size: 1.3em;
+    text-align: center;
+    margin-bottom: 2em;
+}

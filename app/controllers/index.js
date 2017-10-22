@@ -66,13 +66,14 @@ angular.module('ht')
 			var res = crime_due_to_alcoholism_killed["2015"][index];
 			$scope.stategapcrime = Number((( res / sum ) * 100).toFixed(1)); 
 
-			total = total.sort(function(a, b){return b-a});
+			total = total.concat().sort(function(a, b){return b-a});
 			$scope.stateposcrime = total.indexOf(res) + 1;
-
+			console.log(total);
+			console.log(res);
 			var gbv = gender_based_violence["total"];
 			var gbv_res = gender_based_violence["total"][index];
 			$scope.stategapacc = gender_based_violence["total"][index];
-			gbv = gbv.sort(function(a, b){return b-a});
+			gbv = gbv.concat().sort(function(a, b){return b-a});
 			console.log(gbv);
 			console.log(gbv_res);
 			$scope.stateposacc = gbv.indexOf(gbv_res) + 1;
